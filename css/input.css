@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
+
+
 
 @import "tailwindcss";
-=======
-@import "tailwindcss";
 
->>>>>>> 358944b (Complete Prodesk IT landing page)
 @custom-variant dark (&:where(.dark, .dark *));
+
