@@ -47,10 +47,3 @@ A professional responsive digital agency landing page.
 3. Open index.html.
 4. Run using Live Server.
 
-## Before Submission
-
-- Update official company contact details.
-- Add official social media links.
-- Test desktop and mobile responsiveness.
-- Deploy the website.
-- Run Google Lighthouse Audit.

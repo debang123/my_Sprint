@@ -1,33 +1,80 @@
 
+/* =================================
+   DARK / LIGHT THEME
+================================= */
+
+const html = document.documentElement;
+const themeToggle = document.getElementById("themeToggle");
+
+// Read saved theme
+let savedTheme = "light";
+
+try {
+    savedTheme = localStorage.getItem("prodesk-theme") || "light";
+} catch (error) {
+    console.warn("Could not read saved theme.");
+}
+
+// Apply theme
+function applyTheme(theme, save = false) {
+
+    const isDark = theme === "dark";
+
+    html.classList.toggle("dark", isDark);
+
+    if (themeToggle) {
+
+        themeToggle.textContent = isDark ? "☀" : "☾";
+
+        themeToggle.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light mode" : "Switch to dark mode"
+        );
+
+        themeToggle.setAttribute(
+            "aria-pressed",
+            String(isDark)
+        );
+    }
+
+    if (save) {
+        try {
+            localStorage.setItem("prodesk-theme", theme);
+        } catch (error) {
+            console.warn("Could not save theme.");
+        }
+    }
+}
+
+// Initial theme
+applyTheme(savedTheme);
+
+// Toggle theme
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", function () {
+
+        const isDark = html.classList.contains("dark");
+
+        applyTheme(isDark ? "light" : "dark", true);
+
+    });
+
+}
+
+
+/* =================================
+   MOBILE NAVIGATION
+================================= */
 
 const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
 
-const navLinks = document.getElementById("navLinks");
+if (menuToggle && mobileNav) {
 
-// Open and close mobile menu
-menuToggle.addEventListener("click", function () {
+    function closeMenu() {
 
-    const isOpen = navLinks.classList.toggle("open");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-    );
-
-    menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
-
-});
-
-
-// Close menu after clicking a navigation link
-document.querySelectorAll(".nav-link").forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        navLinks.classList.remove("open");
+        mobileNav.classList.add("hidden");
 
         menuToggle.setAttribute("aria-expanded", "false");
 
@@ -36,67 +83,42 @@ document.querySelectorAll(".nav-link").forEach(function (link) {
             "Open navigation menu"
         );
 
-    });
-
-});
-
-
-/* =================================
-   PHASE 2 - DARK/LIGHT MODE
-================================= */
-
-// Create theme button
-const themeToggle = document.createElement("button");
-
-themeToggle.className = "theme-toggle";
-
-themeToggle.type = "button";
-
-themeToggle.textContent = "☾";
-
-themeToggle.setAttribute(
-    "aria-label",
-    "Switch to dark mode"
-);
-
-
-// Insert button between logo and hamburger button
-document.querySelector(".navbar").insertBefore(
-    themeToggle,
-    menuToggle
-);
-
-
-// Theme button click event
-themeToggle.addEventListener("click", function () {
-
-    // Add or remove dark-mode class from body
-    const darkModeEnabled = document.body.classList.toggle("dark-mode");
-
-    // Change icon
-    themeToggle.textContent = darkModeEnabled ? "☀" : "☾";
-
-    // Accessibility label
-    themeToggle.setAttribute(
-        "aria-label",
-        darkModeEnabled ? "Switch to light mode" : "Switch to dark mode"
-    );
-
-});
-
-
-/* =================================
-   RESET MENU ON DESKTOP RESIZE
-================================= */
-
-window.addEventListener("resize", function () {
-
-    if (window.innerWidth > 700) {
-
-        navLinks.classList.remove("open");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-
+        menuToggle.textContent = "☰";
     }
 
-});
+    menuToggle.addEventListener("click", function () {
+
+        const isOpen =
+            menuToggle.getAttribute("aria-expanded") === "true";
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+
+            mobileNav.classList.remove("hidden");
+
+            menuToggle.setAttribute("aria-expanded", "true");
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Close navigation menu"
+            );
+
+            menuToggle.textContent = "×";
+        }
+
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth >= 768) {
+            closeMenu();
+        }
+
+    });
+
+}

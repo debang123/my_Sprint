@@ -3,144 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prodesk IT | We Build Digital Experiences</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Prodesk IT | We Build Digital Experiences</title>
+    <meta name="description" content="Prodesk IT delivers modern web development, digital marketing and UI/UX design solutions.">
+
+    <meta name="theme-color" content="#020617">
+    <!-- Hero image preload -->
+    <link
+        rel="preload"
+        as="image"
+        href="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=1600&q=70"
+        fetchpriority="high"
+    >
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./css/tailwind.css">
+
 </head>
 
-<body>
+<body class="bg-white text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
 
-    <!-- NAVBAR -->
-    <header class="site-header">
-        <nav class="navbar container">
+    <!-- NAVBAR: GLASSMORPHISM -->
+    
 
-            <a class="logo" href="#home">
-                <span class="logo-mark">P</span>
-                <span>prodesk<span class="logo-accent">IT</span></span>
-            </a>
+<header class="fixed left-0 top-0 z-50 w-full border-b border-slate-200/70 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/80">
 
-            <!-- Hamburger Button -->
-            <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="navLinks">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <!-- Logo -->
+        <a href="#home" class="text-2xl font-bold tracking-wide text-slate-900 dark:text-white">
+            Prodesk <span class="text-cyan-500">IT</span>
+        </a>
 
-            <!-- Navigation Links -->
-            <ul class="nav-links" id="navLinks">
-                <li><a class="nav-link active" href="#home">Home</a></li>
-                <li><a class="nav-link" href="#about">About</a></li>
-                <li><a class="nav-link" href="#services">Services</a></li>
-                <li><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
+        <!-- Desktop Navigation -->
+        <div class="hidden items-center gap-10 md:flex">
+            <a href="#home" class="text-slate-700 transition hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400">Home</a>
+            <a href="#about" class="text-slate-700 transition hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400">About</a>
+            <a href="#services" class="text-slate-700 transition hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400">Services</a>
+            <a href="#contact" class="rounded-full bg-cyan-500 px-5 py-2 font-semibold text-slate-950 transition hover:bg-cyan-400">Contact</a>
+        </div>
 
-        </nav>
-    </header>
+        <!-- Theme Toggle -->
+        <button
+            id="themeToggle"
+            type="button"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-slate-100 text-xl text-slate-900 transition hover:bg-slate-200 dark:border-white/20 dark:bg-white/10 dark:text-white"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+        >
+            ☾
+        </button>
+
+        <!-- Mobile Menu -->
+        <button
+            id="menuToggle"
+            type="button"
+            class="text-2xl text-slate-900 dark:text-white md:hidden"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+        >
+            ☰
+        </button>
+
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileNav" class="hidden border-t border-slate-200 bg-white px-6 py-4 dark:border-white/10 dark:bg-slate-950 md:hidden">
+        <div class="flex flex-col gap-5">
+            <a href="#home" class="text-slate-700 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400">Home</a>
+            <a href="#about" class="text-slate-700 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400">About</a>
+            <a href="#services" class="text-slate-700 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400">Services</a>
+            <a href="#contact" class="text-slate-700 hover:text-cyan-600 dark:text-gray-300 dark:hover:text-cyan-400">Contact</a>
+        </div>
+    </div>
+
+</header>
+
+
 
     <main>
 
-        <!-- HERO SECTION -->
-        <section class="hero section-padding" id="home">
+        
+    
 
-            <div class="container hero-grid">
+<!-- HERO SECTION -->
+<section
+    id="home"
+    class="relative isolate flex min-h-[760px] items-center overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-28 md:min-h-[750px] md:py-32"
+    style="background-image: linear-gradient(rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0.78)), url('https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=1600&q=70');"
+>
 
-                <div class="hero-copy">
+    <!-- HERO CONTENT -->
+    <div class="relative z-10 mx-auto w-full max-w-7xl">
 
-                    <span class="eyebrow">
-                        <span class="eyebrow-dot"></span>
-                        DIGITAL INNOVATION AGENCY
-                    </span>
+        <div class="max-w-3xl">
 
-                    <h1>
-                        We build digital experiences that
-                        <span>move businesses forward.</span>
-                    </h1>
+            <!-- BADGE -->
+            <span class="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-200/50 bg-slate-950/70 px-4 py-2 text-xs font-bold tracking-[0.2em] text-cyan-200">
 
-                    <p class="hero-description">
-                        From standout websites to smarter digital marketing,
-                        we help ambitious businesses turn ideas into
-                        meaningful growth.
-                    </p>
+                <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+                DIGITAL INNOVATION AGENCY
 
-                    <div class="hero-actions">
+            </span>
 
-                        <a class="button button-primary" href="#contact">
-                            Get Started <span>↗</span>
-                        </a>
+            <!-- HEADING -->
+            <h1 class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
 
-                        <a class="text-link" href="#services">
-                            Explore our services →
-                        </a>
+                We build digital experiences that
 
-                    </div>
+                <span class="text-cyan-400">
+                    move businesses forward.
+                </span>
 
-                </div>
+            </h1>
 
-                <!-- Hero Illustration -->
-                <div class="hero-visual">
+            <!-- DESCRIPTION -->
+            <p class="mt-7 max-w-2xl text-base leading-8 text-slate-500 sm:text-lg">
 
-                  <img src="images/about-team.jpg" alt="" aria-hidden="true">
+                From standout websites to smarter digital marketing,
+                we help ambitious businesses turn ideas into
+                meaningful growth.
 
-                </div>
+            </p>
+
+            <!-- BUTTONS -->
+            <div class="mt-9 flex flex-wrap items-center gap-6">
+
+                <a
+                    href="#contact"
+                    class="inline-flex items-center gap-3 rounded-lg bg-cyan-400 px-7 py-4 font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300"
+                >
+                    Get Started <span>↗</span>
+                </a>
+
+                <a
+                    href="#services"
+                    class="font-semibold text-white transition hover:text-cyan-400"
+                >
+                    Explore our services →
+                </a>
 
             </div>
 
-        </section>
+        </div>
+    </div>
 
-        <!-- ABOUT SECTION -->
-        <section class="intro section-padding" id="about">
+</section>
 
-            <div class="container intro-grid">
 
-                <p class="section-kicker">
+
+
+        
+    <!-- ABOUT SECTION -->
+    <section id="about" class="px-6 py-24 md:py-32">
+
+        <div class="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-[0.7fr_1.3fr] md:gap-20">
+            
+
+            <!-- Left Side: Image and Label -->
+            <div>
+                <p class="mb-6 text-sm font-bold tracking-widest text-cyan-700">
                     01 / WHO WE ARE
-                    <img src="https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="" aria-hidden="true">
-                  </p>
-                  
-                  <div>
-                    <h2>
-                        Good ideas deserve
-                        <span>great execution.</span>
-                    </h2>
+                </p>
 
-                    <p class="intro-text">
-                        We bring strategy, technology and creativity
-                        together to help brands build a stronger digital
-                        presence. Our focus is simple: create useful
-                        experiences that look good, work smoothly and
-                        support real business goals.
-                    </p>
-
+                <div class="overflow-hidden rounded-xl shadow-lg shadow-cyan-500/20">
+                    <img
+                        src="https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=2070&auto=format&fit=crop"
+                        alt="Team collaborating on a digital project"
+                        class="h-72 w-full rounded-xl object-cover md:h-96"
+                        loading="lazy"
+                        decoding="async"
+                        width="800"
+                        height="600"
+                    >
                 </div>
-
             </div>
 
-        </section>
+            <!-- Right Side: Content -->
+            <div>
+                <h2 class="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+                    Good ideas deserve
+                    <span class="text-cyan-600">great execution.</span>
+                </h2>
+
+                <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
+                    We bring strategy, technology and creativity
+                    together to help brands build a stronger digital
+                    presence. Our focus is simple: create useful
+                    experiences that look good, work smoothly and
+                    support real business goals.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
 
         <!-- SERVICES SECTION -->
-        <section class="services section-padding" id="services">
+        <section class="bg-slate-50 px-6 py-24 md:py-32" id="services">
 
-            <div class="container">
+            <div class="mx-auto max-w-7xl">
 
-                <div class="section-heading">
+                <div class="mb-16 grid gap-8 md:grid-cols-2 md:items-end">
 
                     <div>
-                        <p class="section-kicker">
+                        <p class="mb-5 text-sm font-bold tracking-widest text-cyan-700">
                             02 / WHAT WE DO
                         </p>
 
-                        <h2>
-                            Services built for<br>
-                            <span>what's next.</span>
+                        <h2 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+                            Services built for
+                            <span class="text-cyan-600">what's next.</span>
                         </h2>
                     </div>
 
-                    <p>
+                    <p class="max-w-lg text-lg leading-8 text-slate-600 md:justify-self-end">
                         Thoughtful digital solutions to help your business
                         stand out, connect with customers and keep moving
                         forward.
@@ -148,172 +226,157 @@
 
                 </div>
 
-                <div class="service-grid">
+                <div class="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
 
                     <!-- SERVICE 1 -->
-                    <article class="service-card">
+                    <article class="group rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-cyan-300 hover:shadow-xl">
 
-                        <div class="service-icon-box">
-
-                            <svg class="service-svg" viewBox="0 0 24 24">
-                                <circle cx="10.8" cy="10.8" r="6.8"></circle>
-                                <path d="m16 16 5 5M8 10.8h5.6M10.8 8v5.6"></path>
-                            </svg>
-
+                        <div class="mb-8 grid h-14 w-14 place-items-center rounded-xl bg-cyan-50 text-cyan-600 transition group-hover:bg-cyan-400 group-hover:text-slate-950">
+                            <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                class="h-7 w-7"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                ></svg>
+                                
                         </div>
 
-                        <span class="card-number">01</span>
+                        <span class="text-sm font-bold text-cyan-700">01</span>
 
-                        <h3>SEO & Strategy</h3>
+                        <h3 class="mt-3 text-2xl font-bold">SEO & Strategy</h3>
 
-                        <p>
+                        <p class="mt-5 leading-7 text-slate-600">
                             Improve your visibility, reach the right
                             audience and build a stronger foundation
                             for sustainable organic growth.
                         </p>
 
-                        <a href="#contact" class="card-link">
+                        <a href="#contact" class="mt-8 inline-flex items-center gap-2 font-bold text-slate-900 transition group-hover:text-cyan-600">
                             Let's talk <span>↗</span>
                         </a>
-
                     </article>
 
                     <!-- SERVICE 2 -->
-                    <article class="service-card service-card-featured">
+                    <article class="group rounded-2xl border border-cyan-400 bg-slate-950 p-8 text-white shadow-xl shadow-cyan-900/10 transition duration-300 hover:-translate-y-2">
 
-                        <div class="service-icon-box">
-
-                            <svg class="service-svg" viewBox="0 0 24 24">
-                                <rect x="3" y="4" width="18" height="13" rx="2"></rect>
-                                <path d="M8 21h8M12 17v4M7 8h10M7 11h6"></path>
-                            </svg>
-
+                        <div class="mb-8 grid h-14 w-14 place-items-center rounded-xl bg-cyan-400 text-slate-950">
+                            <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                class="h-7 w-7"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                            ></svg>
                         </div>
 
-                        <span class="card-number">02</span>
+                        <span class="text-sm font-bold text-cyan-400">02</span>
 
-                        <h3>Web Development</h3>
+                        <h3 class="mt-3 text-2xl font-bold">Web Development</h3>
 
-                        <p>
+                        <p class="mt-5 leading-7 text-slate-300">
                             Build responsive, accessible and user-friendly
                             websites that turn your brand's first
                             impression into a lasting one.
                         </p>
 
-                        <a href="#contact" class="card-link">
+                        <a href="#contact" class="mt-8 inline-flex items-center gap-2 font-bold text-cyan-400 transition hover:text-cyan-300">
                             Let's talk <span>↗</span>
                         </a>
-
                     </article>
 
                     <!-- SERVICE 3 -->
-                    <article class="service-card">
+                    <article class="group rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-cyan-300 hover:shadow-xl">
 
-                        <div class="service-icon-box">
-
-                            <svg class="service-svg" viewBox="0 0 24 24">
-                                <path d="M3 20V10M9 20V4M15 20v-7M21 20V7"></path>
-                                <path d="m3 7 6-4 6 7 6-5"></path>
-                            </svg>
-
+                        <div class="mb-8 grid h-14 w-14 place-items-center rounded-xl bg-cyan-50 text-cyan-600 transition group-hover:bg-cyan-400 group-hover:text-slate-950">
+                            <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                class="h-7 w-7"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                            ></svg>
                         </div>
 
-                        <span class="card-number">03</span>
+                        <span class="text-sm font-bold text-cyan-700">03</span>
 
-                        <h3>Digital Marketing</h3>
+                        <h3 class="mt-3 text-2xl font-bold">Digital Marketing</h3>
 
-                        <p>
+                        <p class="mt-5 leading-7 text-slate-600">
                             Create meaningful campaigns, strengthen
                             customer connections and make every digital
                             touchpoint count.
                         </p>
 
-                        <a href="#contact" class="card-link">
+                        <a href="#contact" class="mt-8 inline-flex items-center gap-2 font-bold text-slate-900 transition group-hover:text-cyan-600">
                             Let's talk <span>↗</span>
                         </a>
-
                     </article>
 
                 </div>
-
             </div>
-
         </section>
 
         <!-- CONTACT SECTION -->
-        <section class="contact section-padding" id="contact">
+        <section class="px-6 py-24" id="contact">
 
-            <div class="container contact-panel">
+            <div class="relative mx-auto flex max-w-7xl flex-col gap-10 overflow-hidden rounded-3xl bg-slate-950 px-8 py-16 text-white sm:px-14 md:flex-row md:items-center md:justify-between md:py-20">
 
-                <div>
-
-                    <p class="section-kicker">
+                <div class="relative z-10">
+                    <p class="mb-5 text-sm font-bold tracking-widest text-cyan-400">
                         03 / HAVE A PROJECT IN MIND?
                     </p>
 
-                    <h2>
-                        Let's make something<br>
-                        <span>meaningful together.</span>
+                    <h2 class="text-4xl font-extrabold leading-tight sm:text-5xl">
+                        Let's make something
+                        <span class="text-cyan-400">meaningful together.</span>
                     </h2>
-
                 </div>
 
-                <a class="button button-light"
-                   href="mailto:hello@prodeskit.example">
-
+                <a
+                    class="relative z-10 inline-flex shrink-0 items-center justify-center gap-3 rounded-lg bg-white px-7 py-4 font-bold text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-300"
+                    href="mailto:hello@prodeskit.example">
                     Get in touch <span>↗</span>
-
                 </a>
 
-                <div class="contact-decoration"></div>
+                <div class="pointer-events-none absolute -right-20 -top-32 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
             </div>
-
         </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="bg-slate-950 px-6 text-white">
 
-        <div class="container footer-main">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 border-b border-white/10 py-12 md:flex-row md:items-center">
 
-            <a class="logo footer-logo" href="#home">
-                <span class="logo-mark">P</span>
-                <span>prodesk<span class="logo-accent">IT</span></span>
+            <a class="flex items-center gap-2 text-2xl font-extrabold" href="#home">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400 text-slate-950">P</span>
+                <span>prodesk<span class="text-cyan-400">IT</span></span>
             </a>
 
-            <p>Building better digital experiences.</p>
+            <p class="text-slate-400">Building better digital experiences.</p>
 
-            <div class="social-links">
-
-                <a href="https://www.linkedin.com/"
-                   target="_blank"
-                   aria-label="LinkedIn">in</a>
-
-                <a href="https://www.instagram.com/"
-                   target="_blank"
-                   aria-label="Instagram">ig</a>
-
-                <a href="https://www.facebook.com/"
-                   target="_blank"
-                   aria-label="Facebook">f</a>
-
+            <div class="flex gap-3">
+                <a class="grid h-10 w-10 place-items-center rounded-full border border-white/20 transition hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+                <a class="grid h-10 w-10 place-items-center rounded-full border border-white/20 transition hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">ig</a>
+                <a class="grid h-10 w-10 place-items-center rounded-full border border-white/20 transition hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
             </div>
 
         </div>
 
-        <div class="container footer-bottom">
-
+        <div class="mx-auto flex max-w-7xl flex-col justify-between gap-4 py-6 text-sm text-slate-400 sm:flex-row">
             <span>© 2026 Prodesk IT. All rights reserved.</span>
-
-            <a href="#home">Back to top ↑</a>
-
+            <a class="transition hover:text-cyan-400" href="#home">Back to top ↑</a>
         </div>
 
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 
 </body>
 </html>
