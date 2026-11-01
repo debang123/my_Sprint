@@ -1,53 +1,124 @@
-# PROJECT
-This is a repo for my work ..
+# Prodesk IT – Responsive Landing Page
+
+A modern, professional, and responsive landing page developed for **Prodesk IT**, a digital marketing company, as part of Sprint 1.
+
+The website is designed to provide a clean user experience, showcase company services, and work smoothly across desktop, tablet, and mobile devices.
+
+## 🌐 Live Demo
+
+**Live Website:** https://prodesk-sprint-1-omega.vercel.app/
+
+## 📌 Project Overview
+
+The objective of this project was to build a professional landing page using foundational web technologies, focusing on responsive layouts, clean UI design, and interactive functionality.
+
+The project demonstrates the use of HTML, Tailwind CSS, CSS Grid, Flexbox, and JavaScript.
+
+## ✨ Features
+
+- **Responsive Navigation Bar:** Navigation links for Home, About, Services, and Contact.
+- **Mobile Navigation:** Hamburger menu for smaller screens.
+- **Hero Section:** Attractive headline, background image, description, and call-to-action button.
+- **About Section:** Introduction to Prodesk IT.
+- **Services Section:** Three service cards showcasing company offerings.
+- **Responsive Layout:** Adapts to desktop, tablet, and mobile screens.
+- **Modern UI:** Clean design, typography, spacing, and visual styling.
+- **Interactive Elements:** JavaScript-based functionality.
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Website structure |
+| Tailwind CSS | Styling and responsive design |
+| CSS3 | Custom styling |
+| JavaScript | Interactive functionality |
+| Git & GitHub | Version control |
+| Vercel | Deployment |
+
+## 📂 Project Structure
+
+```text
+sprint-1/
+│
+├── index.html
+├── css/
+│   ├── input.css
+│   ├── tailwind.css
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+├── Prompts.md
+├── README.md
+├── package.json
+└── package-lock.json
+```
 
 
+## 🚀 Getting Started
 
-# Prodesk IT Landing Page
+Follow these steps to run the project locally.
 
-A professional responsive digital agency landing page.
+### 1. Clone the repository
 
-## Technologies Used
+```bash
+git clone https://github.com/debang123/my_Sprint.git
+```
 
-- HTML5
-- CSS3
-- Flexbox
-- CSS Grid
-- Vanilla JavaScript
+### 2. Navigate to the project folder
 
-## Phase 1 - Base MVP
+```bash
+cd my_Sprint
+```
 
-- Responsive Navbar
-- Hero Section
-- About Section
-- Three Service Cards
-- Contact Section
-- Footer
-- Mobile Responsive Design
+### 3. Install dependencies
 
-## Phase 2 - UI/UX Enhancements
+```bash
+npm install
+```
 
-- Dark/Light Theme
-- Hamburger Menu
-- CTA Hover Effects
-- Service Card Hover Effects
-- Sticky Navigation
+### 4. Build Tailwind CSS
 
-## Phase 3 - Stretch Goals
+```bash
+npm run build
+```
 
-- Tailwind CSS Migration
-- Lighthouse Performance Audit
-- Accessibility Optimization
-- Glassmorphism Navbar
+### 5. Run the project
 
-## How to Run
+Open `index.html` in your browser or use the VS Code Live Server extension.
 
-1. Clone or download the repository.
-2. Open the folder in VS Code.
-3. Open index.html.
-4. Run using Live Server.
+## 📱 Responsive Design
 
-# prodesk-it-landing-page
-https://prodesk-sprint-1-omega.vercel.app/#home
+The website is designed to support different screen sizes:
 
+- Desktop screens
+- Tablet screens
+- Mobile screens
 
+Responsive layouts are implemented using Tailwind CSS utilities, CSS Grid, and Flexbox.
+
+## ☁️ Deployment
+
+The project is deployed using **Vercel**.
+
+**Live URL:** https://prodesk-sprint-1-omega.vercel.app/
+
+## 🤖 AI Assistance
+
+AI tools were used during development for:
+- UI improvement suggestions.
+- Debugging and troubleshooting.
+
+For the development prompt documentation, see [Prompts.md](./Prompts.md).
+
+## 👨‍💻 Author
+
+**Name:** Debang Bhaskar
+
+**GitHub:** https://github.com/debang123
+
+## 📄 License
+
+This project was created for educational and sprint evaluation purposes.
