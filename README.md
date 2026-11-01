@@ -113,6 +113,17 @@ AI tools were used during development for:
 
 For the development prompt documentation, see [Prompts.md](./Prompts.md).
 
+## 📸 Screenshots
+
+### Homepage – Desktop
+![Homepage Desktop](./screenshots/homepage.png)
+
+### Services Section
+![Services Section](./screenshots/services.png)
+
+### Mobile Responsive View
+![Mobile View](./screenshots/mobile.png)
+
 ## 👨‍💻 Author
 
 **Name:** Debang Bhaskar
